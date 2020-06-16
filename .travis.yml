@@ -8,13 +8,13 @@ script:
 
 after_success:
   - docker build -t gauravlfc93/multi-client ./client
-  - docker build -t gauravlfc93/mulit-nginx ./nginx
-  - docker build -t gauravlfc93/mulit-server ./server
-  - docker build -t gauravlfc93/mulit-worker ./worker
+  - docker build -t gauravlfc93/multi-nginx ./nginx
+  - docker build -t gauravlfc93/multi-server ./server
+  - docker build -t gauravlfc93/multi-worker ./worker
   # Log in to the docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hum
-  - docker push gauravlfc93/mulit-client
+  - docker push gauravlfc93/multi-client
   - docker push gauravlfc93/multi-nginx
-  - docker push gauravlfc93/mulit-server
+  - docker push gauravlfc93/multi-server
   - docker push gauravlfc93/multi-worker
