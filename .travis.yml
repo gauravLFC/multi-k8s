@@ -20,6 +20,8 @@ after_success:
   - docker push gauravlfc93/multi-worker
 
 deploy:
+  edge: true
+  provider: elasticbeanstalk
   provider: elasticbeanstalk
   region: ap-south-1
   app: multi-docker
